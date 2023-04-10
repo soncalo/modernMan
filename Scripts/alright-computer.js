@@ -5,12 +5,6 @@ let lastUpdateTime = 0;
 let bCircle = 150;
 let idkPlaceHolder = false;
 var video = document.createElement('video');
-
-
-function preload() {
-  orbLight = loadImage('assets/light.png');
-  soncaloLogo = loadImage('assets/soncaloLogo.png');
-   
       video.src = 'https://alrightcomputer.s3.us-east-2.amazonaws.com/Intro.mp4';
       video.controls = false;
       video.autoplay = false;
@@ -18,10 +12,15 @@ function preload() {
       video.style.position = 'fixed';
       video.style.top = '0';
       video.style.left = '0';
-      video.style.width = window.innerWidth + 'px';
-      video.style.height = window.innerHeight + 'px';
+      video.style.width = '0' + 'px';
+      video.style.height = '0' + 'px';
       video.style.zIndex = '-90';
       document.body.appendChild(video);
+
+
+function preload() {
+  orbLight = loadImage('assets/light.png');
+  soncaloLogo = loadImage('assets/soncaloLogo.png');
 }
 
 p5.AudioIn();
@@ -304,6 +303,8 @@ function alrightListening() {
 
     if (bCircle >= windowWidth + 100.5 && idkPlaceHolder){
       video.style.zIndex = '99999';
+      video.style.width = window.innerWidth + 'px';
+      video.style.height = window.innerHeight + 'px';
       video.play();
       alrightComputer = true;
     //1 minute and 30 seconds
