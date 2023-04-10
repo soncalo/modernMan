@@ -5,6 +5,12 @@ let lastUpdateTime = 0;
 let bCircle = 150;
 let idkPlaceHolder = false;
 var video = document.createElement('video');
+
+
+function preload() {
+  orbLight = loadImage('assets/light.png');
+  soncaloLogo = loadImage('assets/soncaloLogo.png');
+   
       video.src = 'https://alrightcomputer.s3.us-east-2.amazonaws.com/Intro.mp4';
       video.controls = false;
       video.autoplay = false;
@@ -16,11 +22,6 @@ var video = document.createElement('video');
       video.style.height = window.innerHeight + 'px';
       video.style.zIndex = '-90';
       document.body.appendChild(video);
-
-
-function preload() {
-  orbLight = loadImage('assets/light.png');
-  soncaloLogo = loadImage('assets/soncaloLogo.png');
 }
 
 p5.AudioIn();
