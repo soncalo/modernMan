@@ -222,7 +222,7 @@ function lordOrb(){
       fill('black');
       rect(width - 100, height - 50, 100, 100, 50, 0, 0, 0);
       
-      link(width - 100, height - 50, 50, 50, 'https://www.project.alrightcomputer.com');
+      link(width - 100, height - 50, 50, 50, 'https://project.alrightcomputer.com');
 
       image(soncaloLogo, width - 25, height - 24, 9, 20);
       link(width - 50, height - 50, 50, 50, 'https://www.soncalo.com');
