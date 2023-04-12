@@ -99,6 +99,7 @@ function lordOrb(){
   //circleHover
   if (circleHover){
     // alrightReply();
+    mic.start();
     background('white');
     fill('black');
     textSize(85);
@@ -109,7 +110,6 @@ function lordOrb(){
     text('How may I assist you?', width/2, 180);
     cSize = Math.min(300, 150 + mic.getLevel() * 1000)
     
-    mic.start();
     recognition.continuous = true;
     recognition.interimResults = false;
     clearTimeout(alrightComputerTimeout);
@@ -222,7 +222,7 @@ function lordOrb(){
       fill('black');
       rect(width - 100, height - 50, 100, 100, 50, 0, 0, 0);
       
-      link(width - 100, height - 50, 50, 50, 'https://project.alrightcomputer.com');
+      link(width - 100, height - 50, 50, 50, 'https://www.project.alrightcomputer.com');
 
       image(soncaloLogo, width - 25, height - 24, 9, 20);
       link(width - 50, height - 50, 50, 50, 'https://www.soncalo.com');
