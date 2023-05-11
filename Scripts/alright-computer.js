@@ -307,11 +307,11 @@ function alrightListening() {
       video.style.height = window.innerHeight + 'px';
       video.play();
       alrightComputer = true;
-    //1 minute and 30 seconds
-  //  setTimeout(() => {
-    //  alrightComputer = false;
-//      video.style.zIndex = '-90';
-    }, //9000000);
+    1 minute and 30 seconds
+      setTimeout(() => {
+     alrightComputer = false;
+     //video.style.zIndex = '-90';
+    }, 9000000);
   };
 }
   
