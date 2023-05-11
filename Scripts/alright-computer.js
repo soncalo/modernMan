@@ -310,6 +310,7 @@ function alrightListening() {
     //1 minute and 30 seconds
     setTimeout(() => {
       alrightComputer = false;
+      video.style.zIndex = '-90';
     }, 90000);
   };
 }
