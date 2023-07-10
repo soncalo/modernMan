@@ -247,7 +247,8 @@ function alrightListening() {
     textSize(64);
     textAlign(CENTER, TOP);
     textFont('alrightArial');
-    text("Alright, Computer, " + transcript, width/2, 140);
+    textWrap(WORD);
+    text("Alright, Computer, " + transcript, 0, 140, windowWidth, windowHeight);
 // Check if the transcript exceeds the window width
     if (textWidth('Alright, Computer, ' + transcript) > windowWidth) {
       // Add a new line by appending a line break to the transcript
