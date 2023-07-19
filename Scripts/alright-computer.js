@@ -4,6 +4,8 @@ let transcript;
 let lastUpdateTime = 0;
 let bCircle = 150;
 let idkPlaceHolder = false;
+let startUp;
+
 var video = document.createElement('video');
       video.src = 'https://alrightcomputer.s3.us-east-2.amazonaws.com/ModernManFinal-1.mp4';
       video.controls = false;
@@ -27,8 +29,8 @@ p5.AudioIn();
 
 let 
 function setup() {
+  startUp = windowWidth * 1.5;
   createCanvas(windowWidth, windowHeight);
-
 
 // create a new style element
 var style = document.createElement('style');
@@ -66,7 +68,11 @@ function draw() {
 
   //dark mode
   alrightListening();
-  
+
+  // startUp circle starting at windowWidth in setup, decreasing by 20 until reaching min of 0
+  startUp -= 20;
+  startUp = max(startUp, 0);
+  circle(width / 2, height / 2, startUp);
 }
 
 // function to make links clickable
