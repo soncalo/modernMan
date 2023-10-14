@@ -47,7 +47,7 @@ document.head.appendChild(style);
 
 
   // establish audio
-  mic = new AudioContext();
+  mic = new p5.AudioIn();
 
   
    // establish recognition
