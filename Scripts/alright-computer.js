@@ -50,24 +50,17 @@ document.head.appendChild(style);
   mic = new AudioContext();
 
   
-  let recognition;
-if ('SpeechRecognition' in window) {
-  recognition = new SpeechRecognition();
-} else if ('webkitSpeechRecognition' in window) {
-  recognition = new webkitSpeechRecognition();
-}
+   // establish recognition
+  recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
 
-if (recognition) {
-  // Further configuration and usage of the recognition object
+  // recognition parameters
   recognition.lang = 'en-US';
   recognition.continuous = true;
   recognition.interimResults = false;
-  recognition.start();
-} else {
-  console.error('Speech recognition is not supported in this browser.');
-}
 
-    }
+  // start recognition
+  recognition.start();
+}
   
 function draw() {
   //call the orb
