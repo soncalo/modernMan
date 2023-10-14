@@ -23,11 +23,10 @@ var video = document.createElement('video');
 function preload() {
   orbLight = loadImage('assets/light.png');
   soncaloLogo = loadImage('assets/soncaloLogo.png');
+mic = new AudioContext();
 }
 
-AudioContext();
 
-let 
 function setup() {
   startUp = windowWidth * 1.5;
   createCanvas(windowWidth, windowHeight);
@@ -48,7 +47,7 @@ document.head.appendChild(style);
 
   // establish audio
   //mic = new p5.AudioIn();
-  mic = new AudioContext();
+  //mic = new AudioContext();
       
   let recognition;
 if ('SpeechRecognition' in window) {
