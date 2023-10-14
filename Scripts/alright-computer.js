@@ -25,7 +25,7 @@ function preload() {
   soncaloLogo = loadImage('assets/soncaloLogo.png');
 }
 
-p5.AudioIn();
+//p5.AudioIn();
 
 let 
 function setup() {
@@ -47,7 +47,7 @@ document.head.appendChild(style);
 
 
   // establish audio
-  mic = new p5.AudioIn();
+mic = new AudioContext();
   
   // establish recognition
   recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
