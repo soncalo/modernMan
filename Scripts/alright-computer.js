@@ -25,7 +25,7 @@ function preload() {
   soncaloLogo = loadImage('assets/soncaloLogo.png');
 }
 
-p5.AudioIn();
+AudioContext();
 
 let 
 function setup() {
@@ -47,18 +47,36 @@ document.head.appendChild(style);
 
 
   // establish audio
-  mic = new p5.AudioIn();
-  
-  // establish recognition
-  recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+  //mic = new p5.AudioIn();
+  mic = new AudioContext();
+      
+  let recognition;
+if ('SpeechRecognition' in window) {
+  recognition = new SpeechRecognition();
+} else if ('webkitSpeechRecognition' in window) {
+  recognition = new webkitSpeechRecognition();
+}
 
-  // recognition parameters
+if (recognition) {
+  // Further configuration and usage of the recognition object
   recognition.lang = 'en-US';
   recognition.continuous = true;
   recognition.interimResults = false;
+  recognition.start();
+} else {
+  console.error('Speech recognition is not supported in this browser.');
+}
+      
+  // establish recognition
+  //recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+
+  // recognition parameters
+  //recognition.lang = 'en-US';
+  //recognition.continuous = true;
+  //recognition.interimResults = false;
 
   // start recognition
-  recognition.start();
+//  recognition.start();
 
     }
   
