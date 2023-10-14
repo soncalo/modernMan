@@ -25,7 +25,7 @@ function preload() {
   soncaloLogo = loadImage('assets/soncaloLogo.png');
 }
 
-//p5.AudioIn();
+mic = new AudioContext();
 
 let 
 function setup() {
